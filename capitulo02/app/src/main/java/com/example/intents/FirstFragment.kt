@@ -112,6 +112,7 @@ class FirstFragment : Fragment() {
                 callbackContenidoIntentExplicito.launch(
                     intentExplicito
                 )
+                // startActivity(intentExplicito) <=
             }
     }
 
