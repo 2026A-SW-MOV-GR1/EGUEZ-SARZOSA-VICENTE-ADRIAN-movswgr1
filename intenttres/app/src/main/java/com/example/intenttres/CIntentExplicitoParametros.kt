@@ -1,4 +1,4 @@
-package com.example.intents
+package com.example.intenttres
 
 import android.content.Intent
 import android.os.Bundle
@@ -19,7 +19,6 @@ class CIntentExplicitoParametros : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
         val entrenador = intent.getParcelableExtra<
                 BEntrenador
                 >(
@@ -39,24 +38,15 @@ class CIntentExplicitoParametros : AppCompatActivity() {
         val botonDevolverRespuesta = findViewById<Button>(
             R.id.btn_devolver_respuesta
         )
-        botonDevolverRespuesta
-            .setOnClickListener {
-                val intenRespuesta = Intent()
-                intenRespuesta.putExtra(
-                    "nombreModificado",
-                    nombre + apellido + edad + " :) "
-                )
-                setResult(RESULT_OK, intenRespuesta)
-                finish()
-            }
-
-
-
-
-
-
-
-
+        botonDevolverRespuesta.setOnClickListener {
+            val intentDevolverParametros = Intent()
+            intentDevolverParametros.putExtra(
+                "nombreModificado",
+                nombre + apellido + edad.toString() + " :) "
+            )
+            setResult(RESULT_OK, intentDevolverParametros)
+            finish()
+        }
 
 
 
